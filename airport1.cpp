@@ -8,7 +8,7 @@ int  main()
 {
     map<string, int>airportTraffic;
 
-    ifstream inputFile("210-final-1FA25.txt");
+    ifstream inputFile("210-final-1-FA25.txt");
 
     if(!inputFile.is_open()) {
         cout <<"Error: could not open file"<<endl;
@@ -18,7 +18,14 @@ int  main()
     string origin, destination;
     while(inputFile >> origin >> destination) {
          airportTraffic[origin]++;
-         
+
+         airportTraffic[destination]++;
+    }
+
+    inputFile.close();
+
+    for(const auto& entry: airportTraffic) {
+        cout <<entry.first << " " <<entry.second <<endl;
     }
  
     return 0;
