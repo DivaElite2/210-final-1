@@ -4,6 +4,18 @@
 
 using namespace std;
 
+void printAirportsInRange(const map<string, int>& airportTraffic, int low, int high) {
+    cout<< "Airports with traffic between " <<low <<"and " <<high << ":" <<endl;
+    bool foundAny = false;
+    
+}
+
+
+
+
+
+
+
 int  main()
 {
     map<string, int>airportTraffic;
