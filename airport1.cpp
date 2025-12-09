@@ -21,12 +21,6 @@ void printAirportsInRange(const map<string, int>& airportTraffic, int low, int h
     cout <<endl;
 }
 
-
-
-
-
-
-
 int  main()
 {
     map<string, int>airportTraffic;
