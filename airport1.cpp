@@ -27,6 +27,21 @@ int  main()
     for(const auto& entry: airportTraffic) {
         cout <<entry.first << " " <<entry.second <<endl;
     }
+
+    int maxCount = 0;
+
+    for (const auto& entry : airportTraffic) {
+        if(entry.second > maxCount) {
+            maxCount = entry.second;
+        }
+    }
+
+    cout<<"\nBusiest airport by count " << maxCount << ":" <<endl;
+    for(const auto& entry : airportTraffic) {
+        if(entry.second == maxCount) {
+            cout << entry.first << endl;
+        }
+    }
  
     return 0;
 }
