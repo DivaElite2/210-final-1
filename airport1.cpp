@@ -5,9 +5,20 @@
 using namespace std;
 
 void printAirportsInRange(const map<string, int>& airportTraffic, int low, int high) {
-    cout<< "Airports with traffic between " <<low <<"and " <<high << ":" <<endl;
+    cout<< "Airports with traffic between " <<low <<" and " <<high << ":" <<endl;
     bool foundAny = false;
-    
+
+    for(const auto& entry : airportTraffic) {
+        if(entry.second >= low && entry.second <= high) {
+            cout<< entry.first << " " <<entry.second <<endl;
+            foundAny = true;
+        }
+    }
+
+    if (!foundAny) {
+        cout << "(none)" <<endl;
+    }
+    cout <<endl;
 }
 
 
@@ -54,6 +65,11 @@ int  main()
             cout << entry.first << endl;
         }
     }
+
+    cout << "\n------Range Quries ------" <<endl;
+    printAirportsInRange(airportTraffic, 1, 5);
+
+    printAirportsInRange(airportTraffic, 10, 30);
  
     return 0;
 }
